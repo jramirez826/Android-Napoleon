@@ -1,8 +1,5 @@
 package com.jramirez.pruebanapoleon.service
 
-import retrofit2.HttpException
-import java.net.SocketTimeoutException
-
 class ResponseHandler {
     fun <T : Any> handleSuccess(data: T): Resource<T> {
         return Resource.success(data)
