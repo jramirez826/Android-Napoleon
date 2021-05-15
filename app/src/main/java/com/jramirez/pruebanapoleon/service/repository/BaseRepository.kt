@@ -1,4 +1,4 @@
-package com.jramirez.pruebanapoleon.repository
+package com.jramirez.pruebanapoleon.service.repository
 
 import com.jramirez.pruebanapoleon.service.JSONPlaceholderAPI
 import com.jramirez.pruebanapoleon.service.Resource
