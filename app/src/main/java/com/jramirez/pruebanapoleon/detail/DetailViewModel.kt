@@ -11,7 +11,7 @@ import com.jramirez.pruebanapoleon.service.repository.UserRepositoryImpl
 import kotlinx.coroutines.launch
 
 class DetailViewModel(
-    private val post: Post,
+    private val post: Post?,
     private val repository: UserRepository = UserRepositoryImpl()
 ) :
     BaseViewModel() {
@@ -21,12 +21,14 @@ class DetailViewModel(
     fun getUserLiveData(): LiveData<User> = userLiveData
 
     fun getUser() {
-        viewModelScope.launch {
-            val response = repository.getUser(post.userId)
-            if (response.data != null)
-                userLiveData.postValue(response.data)
-            else
-                errorLiveData.postValue(response.message)
+        post?.let {
+            viewModelScope.launch {
+                val response = repository.getUser(it.userId)
+                if (response.data != null)
+                    userLiveData.postValue(response.data)
+                else
+                    errorLiveData.postValue(response.message)
+            }
         }
     }
 }

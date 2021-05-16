@@ -1,5 +1,6 @@
 package com.jramirez.pruebanapoleon.post
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -7,7 +8,9 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.jramirez.pruebanapoleon.base.CellClickListener
 import com.jramirez.pruebanapoleon.databinding.ActivityPostBinding
+import com.jramirez.pruebanapoleon.detail.DetailActivity
 import com.jramirez.pruebanapoleon.model.Post
+import com.jramirez.pruebanapoleon.utils.Constants
 
 class PostActivity : AppCompatActivity(), CellClickListener<Post> {
 
@@ -26,7 +29,11 @@ class PostActivity : AppCompatActivity(), CellClickListener<Post> {
     }
 
     override fun onCellClickListener(item: Post) {
-        Toast.makeText(this, item.title, Toast.LENGTH_SHORT).show()
+        val intent = Intent(this, DetailActivity::class.java)
+        intent.apply {
+            putExtra(Constants.POST_KEY, item)
+        }
+        startActivity(intent)
     }
 
     private fun createLiveDataObservers() {

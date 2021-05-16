@@ -10,6 +10,6 @@ interface JSONPlaceholderAPI {
     @GET("posts")
     suspend fun getPosts(): List<Post>
 
-    @GET("user/{userId}")
+    @GET("users/{userId}")
     suspend fun getUser(@Path("userId") userId: Int): User
 }
