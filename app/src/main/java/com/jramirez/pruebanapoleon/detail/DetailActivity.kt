@@ -41,6 +41,8 @@ class DetailActivity : AppCompatActivity() {
             labAuthorEmail.text = user.email
             labAuthorPhone.text = user.phone
             labAuthorUsername.text = user.username
+            labAuthorCity.text = user.address.city
+            labAuthorCompany.text = user.company.name
         }
     }
 

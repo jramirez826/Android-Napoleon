@@ -14,13 +14,13 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:fontFamily="sans-serif-black"
-        android:text="TextView"
         android:textAlignment="center"
         android:textAllCaps="true"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="TextView" />
 
     <TextView
         android:id="@+id/lab_post_description"
@@ -30,11 +30,11 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="4dp"
         android:fontFamily="sans-serif-condensed"
-        android:text="TextView"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lab_post_title" />
+        app:layout_constraintTop_toBottomOf="@+id/lab_post_title"
+        tools:text="TextView" />
 
     <TextView
         android:id="@+id/lab_author"
@@ -44,7 +44,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:fontFamily="sans-serif-black"
-        android:text="TextView"
+        android:text="@string/lab_author"
         android:textAlignment="center"
         android:textAllCaps="true"
         android:textSize="20sp"
@@ -60,11 +60,11 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="4dp"
         android:fontFamily="sans-serif-condensed"
-        android:text="TextView"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lab_author" />
+        app:layout_constraintTop_toBottomOf="@+id/lab_author"
+        tools:text="TextView" />
 
     <TextView
         android:id="@+id/lab_author_name"
@@ -74,11 +74,11 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="4dp"
         android:fontFamily="sans-serif-condensed"
-        android:text="TextView"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lab_author_username" />
+        app:layout_constraintTop_toBottomOf="@+id/lab_author_username"
+        tools:text="TextView" />
 
     <TextView
         android:id="@+id/lab_author_email"
@@ -88,11 +88,11 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="4dp"
         android:fontFamily="sans-serif-condensed"
-        android:text="TextView"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lab_author_name" />
+        app:layout_constraintTop_toBottomOf="@+id/lab_author_name"
+        tools:text="TextView" />
 
     <TextView
         android:id="@+id/lab_author_phone"
@@ -102,9 +102,37 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="4dp"
         android:fontFamily="sans-serif-condensed"
-        android:text="TextView"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lab_author_email" />
+        app:layout_constraintTop_toBottomOf="@+id/lab_author_email"
+        tools:text="TextView" />
+
+    <TextView
+        android:id="@+id/lab_author_city"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="4dp"
+        android:fontFamily="sans-serif-condensed"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lab_author_phone"
+        tools:text="TextView" />
+
+    <TextView
+        android:id="@+id/lab_author_company"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="4dp"
+        android:fontFamily="sans-serif-condensed"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lab_author_city"
+        tools:text="TextView" />
 </androidx.constraintlayout.widget.ConstraintLayout>
