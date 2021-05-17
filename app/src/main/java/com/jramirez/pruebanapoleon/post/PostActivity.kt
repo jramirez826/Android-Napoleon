@@ -63,6 +63,7 @@ class PostActivity : AppCompatActivity(), CellClickListener<Post> {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.menu_delete_all -> adapter.removeItems()
+            R.id.menu_refresh -> viewModel.loadPosts()
         }
         return super.onOptionsItemSelected(item)
     }
