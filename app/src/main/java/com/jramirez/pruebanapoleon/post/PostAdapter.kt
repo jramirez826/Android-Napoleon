@@ -4,13 +4,14 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.jramirez.pruebanapoleon.base.CellClickListener
+import com.jramirez.pruebanapoleon.base.CellRemovedListener
 import com.jramirez.pruebanapoleon.databinding.ItemPostBinding
 import com.jramirez.pruebanapoleon.model.Post
 
 class PostAdapter(private val cellClickListener: CellClickListener<Post>) :
-    RecyclerView.Adapter<PostViewHolder>() {
+    RecyclerView.Adapter<PostViewHolder>(), CellRemovedListener {
 
-    var list: List<Post> = emptyList()
+    private var list: MutableList<Post> = mutableListOf()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PostViewHolder {
         val binding = ItemPostBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -31,7 +32,18 @@ class PostAdapter(private val cellClickListener: CellClickListener<Post>) :
     }
 
     fun update(items: List<Post>) {
-        list = items
+        list.clear()
+        list.addAll(items)
         notifyDataSetChanged()
+    }
+
+    override fun onRemoveItem(position: Int) {
+        notifyItemRemoved(position)
+        list.removeAt(position)
+    }
+
+    fun removeItems() {
+        notifyItemRangeRemoved(0, itemCount)
+        list.clear()
     }
 }

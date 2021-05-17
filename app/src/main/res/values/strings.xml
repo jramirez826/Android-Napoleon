@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Prueba Napoleon</string>
+    <string name="menu_delete_all">Borrar todo</string>
 </resources>
