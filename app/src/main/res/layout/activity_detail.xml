@@ -135,4 +135,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lab_author_city"
         tools:text="TextView" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

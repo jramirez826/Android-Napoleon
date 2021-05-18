@@ -26,7 +26,11 @@ class PostAdapter(private val cellClickListener: CellClickListener<Post>) :
             labTitle.text = item.title
             labDescription.text = item.body
             root.setOnClickListener {
-                cellClickListener.onCellClickListener(item)
+                cellClickListener.onCellClickListener(item, it)
+            }
+            checkFavorite.setOnCheckedChangeListener { view, isChecked ->
+                item.isFavorite = isChecked
+                cellClickListener.onCellClickListener(item, view)
             }
         }
     }

@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.ItemTouchHelper
@@ -32,12 +33,17 @@ class PostActivity : AppCompatActivity(), CellClickListener<Post> {
         viewModel.loadPosts()
     }
 
-    override fun onCellClickListener(item: Post) {
-        val intent = Intent(this, DetailActivity::class.java)
-        intent.apply {
-            putExtra(Constants.POST_KEY, item)
+    override fun onCellClickListener(item: Post, view: View) {
+        when (view.id) {
+            R.id.check_favorite -> viewModel.manageFavoritePost(item)
+            else -> {
+                val intent = Intent(this, DetailActivity::class.java)
+                intent.apply {
+                    putExtra(Constants.POST_KEY, item)
+                }
+                startActivity(intent)
+            }
         }
-        startActivity(intent)
     }
 
     private fun createLiveDataObservers() {
