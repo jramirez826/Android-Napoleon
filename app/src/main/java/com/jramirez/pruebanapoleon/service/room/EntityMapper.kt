@@ -12,4 +12,13 @@ object EntityMapper {
             post.title,
             post.body
         )
+
+    fun mapToPost(post: FavoritePostEntity) =
+        Post(
+            post.userId,
+            post.id,
+            post.title,
+            post.body,
+            true
+        )
 }

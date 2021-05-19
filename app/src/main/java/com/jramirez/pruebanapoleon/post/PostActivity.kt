@@ -6,12 +6,14 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.isVisible
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.ItemTouchHelper
 import com.jramirez.pruebanapoleon.R
 import com.jramirez.pruebanapoleon.base.CellClickListener
 import com.jramirez.pruebanapoleon.databinding.ActivityPostBinding
 import com.jramirez.pruebanapoleon.detail.DetailActivity
+import com.jramirez.pruebanapoleon.favoritePost.FavoritePostFragment
 import com.jramirez.pruebanapoleon.model.Post
 import com.jramirez.pruebanapoleon.utils.Constants
 import com.jramirez.pruebanapoleon.utils.DeleteItemCallback
@@ -59,6 +61,15 @@ class PostActivity : AppCompatActivity(), CellClickListener<Post> {
             val itemTouchHelper = ItemTouchHelper(deleteItemCallback)
             itemTouchHelper.attachToRecyclerView(binding.rvPosts)
         }
+        supportFragmentManager.beginTransaction()
+            .add(binding.fragmentFavoritePost.id, FavoritePostFragment.newInstance()).commit()
+    }
+
+    private fun showFavoritePost() {
+        with(binding) {
+            rvPosts.visibility = View.GONE
+            fragmentFavoritePost.visibility = View.VISIBLE
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -70,7 +81,18 @@ class PostActivity : AppCompatActivity(), CellClickListener<Post> {
         when (item.itemId) {
             R.id.menu_delete_all -> adapter.removeItems()
             R.id.menu_refresh -> viewModel.loadPosts()
+            R.id.menu_favorites -> showFavoritePost()
         }
         return super.onOptionsItemSelected(item)
+    }
+
+    override fun onBackPressed() {
+        if (binding.fragmentFavoritePost.isVisible) {
+            with(binding) {
+                rvPosts.visibility = View.VISIBLE
+                fragmentFavoritePost.visibility = View.GONE
+            }
+        } else
+            super.onBackPressed()
     }
 }

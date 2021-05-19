@@ -8,7 +8,7 @@ import com.jramirez.pruebanapoleon.base.CellRemovedListener
 import com.jramirez.pruebanapoleon.databinding.ItemPostBinding
 import com.jramirez.pruebanapoleon.model.Post
 
-class PostAdapter(private val cellClickListener: CellClickListener<Post>) :
+class PostAdapter(private val cellClickListener: CellClickListener<Post>? = null) :
     RecyclerView.Adapter<PostViewHolder>(), CellRemovedListener {
 
     private var list: MutableList<Post> = mutableListOf()
@@ -25,12 +25,13 @@ class PostAdapter(private val cellClickListener: CellClickListener<Post>) :
         with(holder.binding) {
             labTitle.text = item.title
             labDescription.text = item.body
+            checkFavorite.isChecked = item.isFavorite ?: false
             root.setOnClickListener {
-                cellClickListener.onCellClickListener(item, it)
+                cellClickListener?.onCellClickListener(item, it)
             }
-            checkFavorite.setOnCheckedChangeListener { view, isChecked ->
-                item.isFavorite = isChecked
-                cellClickListener.onCellClickListener(item, view)
+            checkFavorite.setOnClickListener { view ->
+                item.isFavorite = checkFavorite.isChecked
+                cellClickListener?.onCellClickListener(item, view)
             }
         }
     }

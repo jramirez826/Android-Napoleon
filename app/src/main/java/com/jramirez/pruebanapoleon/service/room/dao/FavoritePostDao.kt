@@ -15,4 +15,7 @@ interface FavoritePostDao {
 
     @Query("SELECT * FROM favorite_post_table")
     fun getPosts(): LiveData<List<FavoritePostEntity>>
+
+    @Query("SELECT EXISTS(SELECT * FROM favorite_post_table WHERE id = :id)")
+    suspend fun isExistPost(id: Int): Boolean
 }
