@@ -2,7 +2,9 @@ package com.jramirez.pruebanapoleon.post
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
+import com.jramirez.pruebanapoleon.R
 import com.jramirez.pruebanapoleon.base.CellClickListener
 import com.jramirez.pruebanapoleon.base.CellRemovedListener
 import com.jramirez.pruebanapoleon.databinding.ItemPostBinding
@@ -25,7 +27,7 @@ class PostAdapter(private val cellClickListener: CellClickListener<Post>? = null
         with(holder.binding) {
             labTitle.text = item.title
             labDescription.text = item.body
-            checkFavorite.isChecked = item.isFavorite ?: false
+            checkFavorite.isChecked = item.isFavorite
             root.setOnClickListener {
                 cellClickListener?.onCellClickListener(item, it)
             }
@@ -33,6 +35,13 @@ class PostAdapter(private val cellClickListener: CellClickListener<Post>? = null
                 item.isFavorite = checkFavorite.isChecked
                 cellClickListener?.onCellClickListener(item, view)
             }
+            val color = if (position < 20 && !item.isRead)
+                R.color.card_read_background
+            else
+                R.color.card_background
+            card.setCardBackgroundColor(
+                ContextCompat.getColor(this.root.context, color)
+            )
         }
     }
 

@@ -32,6 +32,10 @@ class PostActivity : AppCompatActivity(), CellClickListener<Post> {
         viewModel = ViewModelProvider(this).get(PostViewModel::class.java)
         createLiveDataObservers()
         setUpView()
+    }
+
+    override fun onResume() {
+        super.onResume()
         viewModel.loadPosts()
     }
 

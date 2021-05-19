@@ -31,12 +31,10 @@ class PostViewModel(
 
     fun manageFavoritePost(post: Post) {
         viewModelScope.launch {
-            post.isFavorite?.let {
-                if (it)
-                    roomFavoritePostRepository.savePost(post)
-                else
-                    roomFavoritePostRepository.deletePost(post.id)
-            }
+            if (post.isFavorite)
+                roomFavoritePostRepository.savePost(post)
+            else
+                roomFavoritePostRepository.deletePost(post.id)
         }
     }
 
