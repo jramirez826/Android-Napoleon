@@ -3,6 +3,7 @@
 
     <string name="menu_delete_all">Borrar todo</string>
     <string name="menu_refresh">Actualizar</string>
+    <string name="menu_favorites">Favoritos</string>
 
     <string name="lab_author">Sobre el autor</string>
 
