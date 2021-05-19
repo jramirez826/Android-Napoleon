@@ -13,4 +13,10 @@
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         tools:listitem="@layout/item_post" />
 
+    <FrameLayout
+        android:id="@+id/fragment_favorite_post"
+        android:name="com.jramirez.pruebanapoleon.favoritePost.FavoritePostFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
 </FrameLayout>
