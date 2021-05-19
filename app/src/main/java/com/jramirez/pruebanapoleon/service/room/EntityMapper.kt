@@ -2,6 +2,7 @@ package com.jramirez.pruebanapoleon.service.room
 
 import com.jramirez.pruebanapoleon.model.Post
 import com.jramirez.pruebanapoleon.service.room.entity.FavoritePostEntity
+import com.jramirez.pruebanapoleon.service.room.entity.ReadPostEntity
 
 object EntityMapper {
 
@@ -21,4 +22,7 @@ object EntityMapper {
             post.body,
             true
         )
+
+    fun mapToReadPostEntity(postId: Int) =
+        ReadPostEntity(postId)
 }

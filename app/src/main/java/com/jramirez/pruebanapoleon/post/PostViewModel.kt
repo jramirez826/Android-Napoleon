@@ -5,15 +5,13 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.jramirez.pruebanapoleon.base.BaseViewModel
 import com.jramirez.pruebanapoleon.model.Post
-import com.jramirez.pruebanapoleon.service.repository.PostRepository
-import com.jramirez.pruebanapoleon.service.repository.PostRepositoryImpl
-import com.jramirez.pruebanapoleon.service.repository.RoomFavoritePostRepository
-import com.jramirez.pruebanapoleon.service.repository.RoomFavoritePostRepositoryImpl
+import com.jramirez.pruebanapoleon.service.repository.*
 import kotlinx.coroutines.launch
 
 class PostViewModel(
     private val postRepository: PostRepository = PostRepositoryImpl(),
-    private val roomFavoritePostRepository: RoomFavoritePostRepository = RoomFavoritePostRepositoryImpl()
+    private val roomFavoritePostRepository: RoomFavoritePostRepository = RoomFavoritePostRepositoryImpl(),
+    private val roomReadPostRepository: RoomReadPostRepository = RoomReadPostRepositoryImpl()
 ) :
     BaseViewModel() {
 
@@ -39,6 +37,12 @@ class PostViewModel(
                 else
                     roomFavoritePostRepository.deletePost(post.id)
             }
+        }
+    }
+
+    fun markPostAsRead(postId: Int) {
+        viewModelScope.launch {
+            roomReadPostRepository.saveReadPost(postId)
         }
     }
 }

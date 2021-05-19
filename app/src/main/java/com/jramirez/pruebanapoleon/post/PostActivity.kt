@@ -39,6 +39,7 @@ class PostActivity : AppCompatActivity(), CellClickListener<Post> {
         when (view.id) {
             R.id.check_favorite -> viewModel.manageFavoritePost(item)
             else -> {
+                viewModel.markPostAsRead(item.id)
                 val intent = Intent(this, DetailActivity::class.java)
                 intent.apply {
                     putExtra(Constants.POST_KEY, item)
