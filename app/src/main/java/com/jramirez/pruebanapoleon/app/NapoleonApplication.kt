@@ -5,6 +5,7 @@ import androidx.room.Room
 import com.jramirez.pruebanapoleon.service.room.PostDatabase
 import dagger.hilt.android.HiltAndroidApp
 
+@HiltAndroidApp
 class NapoleonApplication : Application() {
 
     companion object {
