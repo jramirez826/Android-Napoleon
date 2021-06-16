@@ -1,4 +1,4 @@
-package com.jramirez.pruebanapoleon.post
+package com.jramirez.pruebanapoleon.presentation.post
 
 import androidx.recyclerview.widget.RecyclerView
 import com.jramirez.pruebanapoleon.databinding.ItemPostBinding

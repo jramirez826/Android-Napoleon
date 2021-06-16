@@ -1,8 +1,8 @@
-package com.jramirez.pruebanapoleon.utils
+package com.jramirez.pruebanapoleon.presentation.utils
 
 import androidx.recyclerview.widget.ItemTouchHelper.*
 import androidx.recyclerview.widget.RecyclerView
-import com.jramirez.pruebanapoleon.base.CellRemovedListener
+import com.jramirez.pruebanapoleon.presentation.base.CellRemovedListener
 
 class DeleteItemCallback(
     private val cellRemovedListener: CellRemovedListener

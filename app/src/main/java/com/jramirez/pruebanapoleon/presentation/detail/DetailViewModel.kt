@@ -1,9 +1,9 @@
-package com.jramirez.pruebanapoleon.detail
+package com.jramirez.pruebanapoleon.presentation.detail
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
-import com.jramirez.pruebanapoleon.base.BaseViewModel
+import com.jramirez.pruebanapoleon.presentation.base.BaseViewModel
 import com.jramirez.pruebanapoleon.model.Post
 import com.jramirez.pruebanapoleon.model.User
 import com.jramirez.pruebanapoleon.service.repository.UserRepository

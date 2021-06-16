@@ -1,4 +1,4 @@
-package com.jramirez.pruebanapoleon.post
+package com.jramirez.pruebanapoleon.presentation.post
 
 import android.content.Intent
 import android.os.Bundle
@@ -10,13 +10,13 @@ import androidx.core.view.isVisible
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.ItemTouchHelper
 import com.jramirez.pruebanapoleon.R
-import com.jramirez.pruebanapoleon.base.CellClickListener
+import com.jramirez.pruebanapoleon.presentation.base.CellClickListener
 import com.jramirez.pruebanapoleon.databinding.ActivityPostBinding
-import com.jramirez.pruebanapoleon.detail.DetailActivity
-import com.jramirez.pruebanapoleon.favoritePost.FavoritePostFragment
+import com.jramirez.pruebanapoleon.presentation.detail.DetailActivity
+import com.jramirez.pruebanapoleon.presentation.favoritePost.FavoritePostFragment
 import com.jramirez.pruebanapoleon.model.Post
-import com.jramirez.pruebanapoleon.utils.Constants
-import com.jramirez.pruebanapoleon.utils.DeleteItemCallback
+import com.jramirez.pruebanapoleon.presentation.utils.Constants
+import com.jramirez.pruebanapoleon.presentation.utils.DeleteItemCallback
 
 class PostActivity : AppCompatActivity(), CellClickListener<Post> {
 

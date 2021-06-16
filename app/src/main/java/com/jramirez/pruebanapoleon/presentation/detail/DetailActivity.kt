@@ -1,4 +1,4 @@
-package com.jramirez.pruebanapoleon.detail
+package com.jramirez.pruebanapoleon.presentation.detail
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -7,7 +7,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.jramirez.pruebanapoleon.databinding.ActivityDetailBinding
 import com.jramirez.pruebanapoleon.model.Post
 import com.jramirez.pruebanapoleon.model.User
-import com.jramirez.pruebanapoleon.utils.Constants
+import com.jramirez.pruebanapoleon.presentation.utils.Constants
 
 class DetailActivity : AppCompatActivity() {
 

@@ -1,4 +1,4 @@
-package com.jramirez.pruebanapoleon.base
+package com.jramirez.pruebanapoleon.presentation.base
 
 interface CellRemovedListener {
     fun onRemoveItem(position: Int)

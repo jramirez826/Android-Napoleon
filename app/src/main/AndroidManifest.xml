@@ -13,10 +13,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PruebaNapoleon">
         <activity
-            android:name=".detail.DetailActivity"
+            android:name=".presentation.detail.DetailActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".post.PostActivity"
+            android:name=".presentation.post.PostActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

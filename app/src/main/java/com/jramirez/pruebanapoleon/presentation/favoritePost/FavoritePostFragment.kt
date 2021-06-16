@@ -1,4 +1,4 @@
-package com.jramirez.pruebanapoleon.favoritePost
+package com.jramirez.pruebanapoleon.presentation.favoritePost
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.jramirez.pruebanapoleon.databinding.FragmentFavoritePostBinding
-import com.jramirez.pruebanapoleon.post.PostAdapter
+import com.jramirez.pruebanapoleon.presentation.post.PostAdapter
 
 class FavoritePostFragment : Fragment() {
 

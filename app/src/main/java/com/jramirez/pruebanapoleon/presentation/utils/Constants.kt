@@ -1,4 +1,4 @@
-package com.jramirez.pruebanapoleon.utils
+package com.jramirez.pruebanapoleon.presentation.utils
 
 object Constants {
 

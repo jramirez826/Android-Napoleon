@@ -1,9 +1,9 @@
-package com.jramirez.pruebanapoleon.post
+package com.jramirez.pruebanapoleon.presentation.post
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
-import com.jramirez.pruebanapoleon.base.BaseViewModel
+import com.jramirez.pruebanapoleon.presentation.base.BaseViewModel
 import com.jramirez.pruebanapoleon.model.Post
 import com.jramirez.pruebanapoleon.service.repository.*
 import kotlinx.coroutines.launch

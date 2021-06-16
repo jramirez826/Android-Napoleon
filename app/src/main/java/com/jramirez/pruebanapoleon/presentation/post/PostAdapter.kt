@@ -1,12 +1,12 @@
-package com.jramirez.pruebanapoleon.post
+package com.jramirez.pruebanapoleon.presentation.post
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.jramirez.pruebanapoleon.R
-import com.jramirez.pruebanapoleon.base.CellClickListener
-import com.jramirez.pruebanapoleon.base.CellRemovedListener
+import com.jramirez.pruebanapoleon.presentation.base.CellClickListener
+import com.jramirez.pruebanapoleon.presentation.base.CellRemovedListener
 import com.jramirez.pruebanapoleon.databinding.ItemPostBinding
 import com.jramirez.pruebanapoleon.model.Post
 

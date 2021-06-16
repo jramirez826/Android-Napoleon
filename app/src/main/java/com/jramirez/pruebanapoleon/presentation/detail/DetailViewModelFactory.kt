@@ -1,4 +1,4 @@
-package com.jramirez.pruebanapoleon.detail
+package com.jramirez.pruebanapoleon.presentation.detail
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider

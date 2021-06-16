@@ -3,6 +3,7 @@ package com.jramirez.pruebanapoleon.app
 import android.app.Application
 import androidx.room.Room
 import com.jramirez.pruebanapoleon.service.room.PostDatabase
+import dagger.hilt.android.HiltAndroidApp
 
 class NapoleonApplication : Application() {
 
@@ -13,9 +14,9 @@ class NapoleonApplication : Application() {
     override fun onCreate() {
         super.onCreate()
         database = Room.databaseBuilder(
-            this,
-            PostDatabase::class.java,
-            "post_database"
+                this,
+                PostDatabase::class.java,
+                "post_database"
         ).build()
     }
 }
